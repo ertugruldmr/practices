@@ -1,13 +1,12 @@
 num_of_shoes = int(input())
-shoe_list = [int(i) for i in input().split(" ")]
-num_cust = int(input())
-total=0
-for i in range(num_cust):
- temp=[]
- temp= [int(i) for i in input().split(" ")]
- size=temp[0]
- price=temp[1]
- if size in shoe_list:
-     total+=price
-     shoe_list.remove(size)   
-print(total)
+shoes_sizes_avail = [int(x) for x in input().split()]
+num_customers = int(input())
+money_earned = 0
+for i in range(num_customers):
+    desired = [int(x) for x in input().split()]
+    size = desired[0]
+    price = desired[1]
+    if size in shoes_sizes_avail:
+        shoes_sizes_avail.remove(size)
+        money_earned = money_earned + price
+print(money_earned)
